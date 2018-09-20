@@ -48,7 +48,7 @@ class Student
     id=row[0]
     name=row[1]
     grade=[2]
-    student = Student.new(id, name, grade)
+    student = Student.new(name, grade, id)
   end
 
   def self.find_by_name(name)
@@ -56,7 +56,7 @@ class Student
       SELECT * FROM STUDENTS
       WHERE name = ?;
     SQL
-    DB[:conn].execute(sql, "#{name}")
+    DB[:conn].execute(sql, name)
   end
 
 
