@@ -57,8 +57,8 @@ class Student
       SELECT * FROM STUDENTS
       WHERE name = ?;
     SQL
-    DB[:conn].execute(sql, name)
-    binding.pry
+    db_row = DB[:conn].execute(sql, name)[0]
+    self.create(name, "#{db_row[2]}")
   end
 
 
