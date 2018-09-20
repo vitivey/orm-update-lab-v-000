@@ -49,6 +49,7 @@ class Student
     name=row[1]
     grade=[2]
     student = Student.new(name, grade, id)
+    binding.pry
   end
 
   def self.find_by_name(name)
