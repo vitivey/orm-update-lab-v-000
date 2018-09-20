@@ -58,7 +58,7 @@ class Student
       WHERE name = ?;
     SQL
     db_row = DB[:conn].execute(sql, name)[0]
-    self.create(name, "#{db_row[2]}")
+    self.new_from_db(db_row)
   end
 
 
